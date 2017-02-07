@@ -27,6 +27,7 @@ module.exports = new Router({
         { path: 'tab', component: require('./views/tab') },
         { path: 'page', component: require('./views/page') },
         { path: 'flex', component: require('./views/flex') },
+        { path: 'date-picker', component: require('./views/date-picker') },
       ]
     },
     { path: '*', redirect: '/home' },
