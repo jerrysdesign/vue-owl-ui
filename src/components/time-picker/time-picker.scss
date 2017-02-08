@@ -1,0 +1,14 @@
+.timebox {
+  width: 90px;
+  height: 150px;
+  overflow: auto;
+  box-shadow: 0 2px 6px #ccc;
+  li {
+    padding: 2px;
+    padding-left: 8px;
+    cursor: pointer;
+    &:hover {
+      background: #e4e8f1;
+    }
+  }
+}
