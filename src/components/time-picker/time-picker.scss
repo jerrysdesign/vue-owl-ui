@@ -1,14 +1,36 @@
 .timebox {
+  display: none;
   width: 90px;
   height: 150px;
   overflow: auto;
   box-shadow: 0 2px 6px #ccc;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  background: #fff;
   li {
     padding: 2px;
     padding-left: 8px;
     cursor: pointer;
     &:hover {
       background: #e4e8f1;
+    }
+  }
+}
+
+.timepicker {
+  outline: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  width: 120px;
+  height: 34px;
+  position: relative;
+
+  &:focus {
+    outline-color: var(--OWL-UI-COLOR-PRIMARY);
+    .timebox {
+      display: block;
     }
   }
 }
