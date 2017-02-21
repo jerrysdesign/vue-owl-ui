@@ -1,5 +1,6 @@
 $pd: 12px;
 $height: 34px;
+$labelBorderWidth: 1px;
 
 .selecter {
   width: 100%;
@@ -8,13 +9,26 @@ $height: 34px;
 }
 
 .searchField {
-  padding: 5px;
+  padding-bottom: (4px - $labelBorderWidth);
+  padding-left: $pd;
   width: 100%;
-  min-height: 46px;
+  min-height: $height;
   font-size: 14px;
-  min-height: 46px;
   border: 1px solid #b8bdbf;
   color: #6c7173;
+  & > {
+    & .invisibleInput,
+    .labelg,
+    .disabledLabelg {
+      display: inline;
+      vertical-align: top;
+    }
+  }
+  .labelGroup {
+    display: inline;
+    margin-top: 4px;
+    margin-right: 4px;
+  }
   &:focus, &:active {
     outline: none;
     border-color: var(--OWL-UI-COLOR-PRIMARY-LIGHT);
@@ -22,16 +36,11 @@ $height: 34px;
   }
 }
 
-.labelg {
-  display: inline;
-}
-
 .invisibleInput {
   border: none;
   outline: none;
   background-color: transparent;
-  display: inline;
-  vertical-align: middle;
+  margin-top: (($height - 26px) / 2 + 3px);
 }
 
 .optionBox {
@@ -57,6 +66,9 @@ $height: 34px;
       background: #b8bdbf; // $palette.primaryLight
       color: #f2f6f7; // $palette.grayLightest
     }
+    &:hover {
+      background-color: #DFE4E6;
+    }
   }
   .normal {
     position: relative;
@@ -69,15 +81,7 @@ $height: 34px;
     padding: 6px $pd;
     color: #a0a0a0;
     white-space: nowrap;
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: #b8bdbf; // $palette.primaryLight
-    }
+    background-color: #DFE4E6;
   }
   .selected {
     position: relative;
@@ -85,8 +89,9 @@ $height: 34px;
     &:after {
       content: "\2713";
       position: absolute;
-      right: 10px;
-      top: 3px;
+      right: 16px;
+      top: 50%;
+      transform:translateY(-50%);
     }
   }
   .disablePointer {
@@ -107,7 +112,6 @@ $height: 34px;
 }
 
 .disabledLabelg {
-  display: inline;
   pointer-events: none;
 }
 
